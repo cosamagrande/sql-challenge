@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS dep_employees;
 DROP TABLE IF EXISTS dep_manager;
 DROP TABLE IF EXISTS titles;
 DROP TABLE IF EXISTS employees;
-DROP TABLE IF EXISTS salary;
+DROP TABLE IF EXISTS salaries;
 
 -- Generate employees Table
 CREATE TABLE employees (
@@ -48,3 +48,25 @@ CREATE TABLE dep_manager (
 );
 -- View table columns and datatypes
 SELECT * FROM dep_manager;
+
+-- Generate salaries Table
+CREATE TABLE salaries (
+	emp_no INTEGER,
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no),
+	salary INTEGER,	
+    from_date DATE,
+	to_date DATE
+);
+-- View table columns and datatypes
+SELECT * FROM salaries;
+
+-- Generate titles Table
+CREATE TABLE titles (
+	emp_no INTEGER,
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no),
+	title VARCHAR (30),	
+    from_date DATE,
+	to_date DATE
+);
+-- View table columns and datatypes
+SELECT * FROM titles;
