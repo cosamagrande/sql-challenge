@@ -70,3 +70,4 @@ CREATE TABLE titles (
 );
 -- View table columns and datatypes
 SELECT * FROM titles;
+
